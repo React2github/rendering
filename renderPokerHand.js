@@ -12,32 +12,39 @@ function renderPokerHand(pokerHandAbstraction,all) {
     `
 }
 
+var pokerHandAbs = [
+    {
+        value: "K",
+        suit: "C"
+    },
+    {
+        value: "K",
+        suit: "D"
+    },
+    {
+        value: "9",
+        suit: "S"
+    },
+    {
+        value: "2",
+        suit: "H"
+    },
+    {
+        value: "9",
+        suit: "H"
+    }
+]
+>>>>>>> origin
+
 function pokerHand() {
     var content = document.getElementById('content');
 
-    var pokerHandAbstraction = [
-        {
-            value: "K",
-            suit: "C"
-        },
-        {
-            value: "K",
-            suit: "D"
-        },
-        {
-            value: "9",
-            suit: "S"
-        },
-        {
-            value: "2",
-            suit: "H"
-        },
-        {
-            value: "9",
-            suit: "H"
-        }
-    ];
+    
 
+<<<<<<< HEAD
  content.innerHTML = renderPokerHand(pokerHandAbstraction);
+=======
+    content.innerHTML = renderPokerHand(pokerHandAbs);
+>>>>>>> origin
 
 }
