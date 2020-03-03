@@ -1,8 +1,14 @@
 
-function renderTweets(tweets) {
+function renderTweets(tweetsAbstraction,tweets) {
+    var tweets = '';
+    var i;
+    for (i=0;i<tweetsAbstraction.length;i++){
+        tweets += tweetsAbstraction[i].text+"<br>";
+    }
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+        <div>${tweets}</div>
+           <!-- <code>${JSON.stringify(tweets)}</code> -->
         </div>
     `
 }
