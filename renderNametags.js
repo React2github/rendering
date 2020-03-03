@@ -1,23 +1,22 @@
 
-function renderNametags(nametags) {
+function renderNametags(nameTags) {
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(nametags)}</code>
-        </div>
+        <div>${nameTags}</div>
     `
 }
 
 function nametags() {
     var content = document.getElementById('content');
 
-    var nametagsAbstraction = [
+    var nameTags = [
        "Kamilah",
        "Kim",
        "Stuart",
        "Ron",
-       "Krissy"
+       "Krissy",
     ]
 
-    content.innerHTML = renderNametags(nametagsAbstraction);
+    content.innerHTML = renderNametags(nameTags);
 
 }
