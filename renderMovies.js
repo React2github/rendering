@@ -1,8 +1,14 @@
 
-function renderMovies(movies) {
+function renderMovies(moviesAbstraction, movies) {
+    var movies = '';
+    var i;
+    for (i=0;i<moviesAbstraction.length;i++) {
+        movies += moviesAbstraction[i].title+"<br>";
+    }
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+        <div>${movies}</div>
+            <!-- <code>${JSON.stringify(movies)}</code> -->
         </div>
     `
 }

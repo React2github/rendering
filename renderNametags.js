@@ -1,8 +1,13 @@
 
-function renderNametags(nameTags) {
+function renderNametags(nameTags, names) {
+    var names = '';
+    var i;
+    for (i=0;i<nameTags.length;i++) {
+        names += nameTags[i]+"<br>";
+    }
     return `
         <div class="text-center mt-5">
-        <div>${nameTags}</div>
+        <div>${names}</div>
     `
 }
 
