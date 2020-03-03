@@ -1,8 +1,15 @@
 
-function renderAlbums(albums) {
+function renderAlbums(albumsAbstraction,disk) {
+    var disk = "";
+     var i;
+     for (i=0;i<2;i++) {
+     disk += albumsAbstraction[0].albums[i].title+"<br>";
+      console.log(disk)
+     }
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+        <div>${disk}</div>
+           <!-- <code>${JSON.stringify(albums)}</code> -->
         </div>
     `
 }
