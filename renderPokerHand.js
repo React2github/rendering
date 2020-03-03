@@ -12,7 +12,7 @@ function renderPokerHand(pokerHandAbstraction,all) {
     `
 }
 
-var pokerHandAbs = [
+var pokerHandAbstraction = [
     {
         value: "K",
         suit: "C"
@@ -34,17 +34,10 @@ var pokerHandAbs = [
         suit: "H"
     }
 ]
->>>>>>> origin
 
 function pokerHand() {
     var content = document.getElementById('content');
 
-    
-
-<<<<<<< HEAD
- content.innerHTML = renderPokerHand(pokerHandAbstraction);
-=======
-    content.innerHTML = renderPokerHand(pokerHandAbs);
->>>>>>> origin
+ content.innerHTML = renderPokerHand(pokerHandAbstraction)
 
 }
