@@ -1,8 +1,16 @@
 
-function renderSurveys(surveys) {
-    return `
+function renderSurveys(surveysAbstraction, survey) {
+     var survey = '';
+     var i;
+      for (i=0;i<surveysAbstraction.length;i++) {
+         survey += surveysAbstraction[i].title+"<br>";
+        console.log(survey);
+
+ }
+    return ` 
         <div class="text-center mt-5">
-            <code>${JSON.stringify(surveys)}</code>
+        <div>${survey}</div>
+            <!-- <code>${JSON.stringify(surveys)}</code> -->
         </div>
     `
 }
