@@ -2,44 +2,45 @@
 function renderAlbums(albums) {
     var albumHeader = "";
     var albumSongs = "";
+         
+       // This is to find all of the artists
+        for (var i = 0; i < albums.length; i++) {
+            var artistPage = `
+                <div class="jumbotron jumbotron-fluid">
+                    <h1 class="display-4">${albums[i].artist}</h1>
+                    <hr class="my-4">
+                </div>
+                `
+        }
+         // This is to find the album coverart and title
+        for (var i = 0; i < albums.length; i++) {
+            albumHeader = albums[i].albums.map(e => {
 
-    for (var i = 0; i < albums.length; i++) {
-    var artistPage = `
-        <div class="jumbotron jumbotron-fluid">
-        <h1 class="display-4">${albums[i].artist}</h1>
-        <hr class="my-4">
-        </div>
-    `
-    }
-
-    for (var i = 0; i < albums.length; i++) {
-        albumHeader = albums[i].albums.map(e => {
-
-            return `
-                <div class="container flex-row justify-content-start">
-                    <img src="${e.albumCover}" width="100" />
-                    <h3> ${e.title} </h3>
-                </div> `
+                return `
+                    <div class="container flex-row justify-content-start">
+                        <img src="${e.albumCover}" width="100" />
+                        <h3> ${e.title} </h3>
+                    </div> `
 
         })
-
+        // This is to find title of song and length
         for (var j = 0; j < albums[i].albums.length; j++) {
         albumSongs = albums[i].albums[j].songs.map(e => {
-            return `
-            <div class="container">
-                <div class="row justify-content-between align-items-center border-bottom-1 border-secondary">
-                    <div class="col-4">${e.title}</div>
-                    <div class="col-1">${e.length}</div>
+                return `
+                <div class="container">
+                    <div class="row justify-content-between align-items-center border-bottom-1 border-secondary">
+                        <div class="col-4">${e.title}</div>
+                        <div class="col-1">${e.length}</div>
+                    </div>
                 </div>
-            </div>
-      `
-        })
-        artistPage += albumHeader[j];
-        artistPage += albumSongs.join(''); 
+        `
+            })
+            artistPage += albumHeader[j];
+            artistPage += albumSongs.join(''); 
+            }
+        
         }
-    
-    }
-    return artistPage;
+        return artistPage;
 }
 
 
