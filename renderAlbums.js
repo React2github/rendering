@@ -1,18 +1,47 @@
 
-function renderAlbums(albumsAbstraction,disk) {
-    var disk = "";
-     var i;
-     for (i=0;i<2;i++) {
-     disk += albumsAbstraction[0].albums[i].title+"<br>";
-      console.log(disk)
-     }
-    return `
-        <div class="text-center mt-5">
-        <div>${disk}</div>
-           <!-- <code>${JSON.stringify(albums)}</code> -->
+function renderAlbums(albums) {
+    var albumHeader = "";
+    var albumSongs = "";
+
+    for (var i = 0; i < albums.length; i++) {
+    var artistPage = `
+        <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">${albums[i].artist}</h1>
+        <hr class="my-4">
         </div>
     `
+    }
+
+    for (var i = 0; i < albums.length; i++) {
+        albumHeader = albums[i].albums.map(e => {
+
+            return `
+                <div class="container flex-row justify-content-start">
+                    <img src="${e.albumCover}" width="100" />
+                    <h3> ${e.title} </h3>
+                </div> `
+
+        })
+
+        for (var j = 0; j < albums[i].albums.length; j++) {
+        albumSongs = albums[i].albums[j].songs.map(e => {
+            return `
+            <div class="container">
+                <div class="row justify-content-between align-items-center border-bottom-1 border-secondary">
+                    <div class="col-4">${e.title}</div>
+                    <div class="col-1">${e.length}</div>
+                </div>
+            </div>
+      `
+        })
+        artistPage += albumHeader[j];
+        artistPage += albumSongs.join(''); 
+        }
+    
+    }
+    return artistPage;
 }
+
 
 function albums() {
     var content = document.getElementById('content');
