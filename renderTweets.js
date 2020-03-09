@@ -2,11 +2,17 @@
 function renderTweets(tweetsAbstraction) {
     // Empty variables for storage 
     var firstTweet = '';
-    var users = '';
+  
 
         for (var i = 0; i < tweetsAbstraction.length;i++) {
          firstTweet = tweetsAbstraction.map(e => {
          return  `
+
+
+            <div>${e.user.username}</div>
+            <div>${e.user.handle}</div>
+            <div> Verified? ${e.user.isVerified}</div>
+            <img src="${e.user.profilePic}" width="100" />
             <div>${e.text}</div>
             <button>Likes ${e.likes}</button>
             <button>Retweets ${e.retweets}</button>
@@ -14,20 +20,12 @@ function renderTweets(tweetsAbstraction) {
 
         `
          })
+        }  
 
-         for (var j = 0; j < tweetsAbstraction[i].length; j++) {
-            users = tweetsAbstraction[i].user.map(e => {
-                console.log(users)
-                return `
-                <div>${e.username}</div>`
-                
-            })
-         }
-         return firstTweet.join("");
-         
+        return firstTweet.join(""); 
+        
     }
-
- }
+ 
 
 function tweets() {
     var content = document.getElementById('content');
@@ -51,7 +49,7 @@ function tweets() {
                 username: "Jaden Smith",
                 isVerified: true,
                 profilePic: "https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg"
-            },
+                },
             text: "How Can Mirrors Be Real If Our Eyes Aren't Real",
             likes: 112,
             retweets: 2,
