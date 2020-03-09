@@ -1,19 +1,39 @@
 
-function renderSurveys(surveysAbstraction, survey) {
-     var survey = '';
-     var i;
-      for (i=0;i<surveysAbstraction.length;i++) {
-         survey += surveysAbstraction[i].title+"<br>";
-        console.log(survey);
+surveyStore = "";
+surveyText = "";
+surveyTotal = "";
 
- }
-    return ` 
-        <div class="text-center mt-5">
-        <div>${survey}</div>
-            <!-- <code>${JSON.stringify(surveys)}</code> -->
-        </div>
-    `
+function renderSurveys(surveyName) {
+
+      for (var i=0; i < surveyName.length; i++) {
+          surveyStore = surveyName.map(e => { 
+           return ` 
+            <div class="text-center mt-5">
+            <div>${e.title}</div>
+            <button>${e.submitButtonText}</button>
+            </div>
+        `
+        })
+    }
+       for (var i=0; i < surveyName.length; i++) {
+           surveyText = surveyName[i].fields.map(e => {
+            return `
+            <div>${e.label}</div> 
+            `
+        })
+        console.log(surveyText)
+        surveyTotal = surveyText;
+        surveyTotal = surveyStore;
+    }
+
+
+  
+    return surveyTotal.join("");
+
+
 }
+
+ 
 
 function surveys() {
     var content = document.getElementById('content');

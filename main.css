@@ -1,5 +1,24 @@
 /* Type whatever CSS you need here! */
 
+.nameGroup {
+margin: 25px; 
+}
+
+.nametags {
+padding: 10px;
+background-color: blue;
+color: white;  
+width: 180px;
+margin-bottom: 5px;
+}
+
+#names {
+background-color: white;
+padding: 10px; 
+color: black; 
+}
+
+
 .restaurant>div {
     
     background-color: lightgray;

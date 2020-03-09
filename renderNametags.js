@@ -2,7 +2,10 @@ function renderNametags(nametags) {
 
     var nameDivs = nametags.map(e => {
         return `
-            <div>${e}</div>
+            <div class="nameGroup">
+            <div class="nametags"> Hello,  my name is: </div>
+            <div id="name"> ${e} </div>
+            <div>
         `
     });
     

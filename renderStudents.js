@@ -30,7 +30,7 @@ function renderStudent(student) {
     // return the HTML for the student using the values
     return `<div class="${className}">
                 <h2>${student.name}</h2>
-                <h3>${isPresentString}</h3>
+                <p>${isPresentString}</p>
             </div>`;
 }
 
