@@ -1,17 +1,33 @@
 
-function renderTweets(tweetsAbstraction,tweets) {
-    var tweets = '';
-    var i;
-    for (i=0;i<tweetsAbstraction.length;i++){
-        tweets += tweetsAbstraction[i].text+"<br>";
+function renderTweets(tweetsAbstraction) {
+    // Empty variables for storage 
+    var firstTweet = '';
+    var users = '';
+
+        for (var i = 0; i < tweetsAbstraction.length;i++) {
+         firstTweet = tweetsAbstraction.map(e => {
+         return  `
+            <div>${e.text}</div>
+            <button>Likes ${e.likes}</button>
+            <button>Retweets ${e.retweets}</button>
+            <button>Replies ${e.replies}</button>
+
+        `
+         })
+
+         for (var j = 0; j < tweetsAbstraction[i].length; j++) {
+            users = tweetsAbstraction[i].user.map(e => {
+                console.log(users)
+                return `
+                <div>${e.username}</div>`
+                
+            })
+         }
+         return firstTweet.join("");
+         
     }
-    return `
-        <div class="text-center mt-5">
-        <div>${tweets}</div>
-           <!-- <code>${JSON.stringify(tweets)}</code> -->
-        </div>
-    `
-}
+
+ }
 
 function tweets() {
     var content = document.getElementById('content');
