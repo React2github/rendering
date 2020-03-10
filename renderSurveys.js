@@ -1,15 +1,17 @@
 
-surveyStore = "";
-surveyText = "";
-surveyTotal = "";
+
 
 function renderSurveys(surveyName) {
+surveyStore = [];
+surveyText = [];
+surveyTotal = [];
+
 
       for (var i=0; i < surveyName.length; i++) {
           surveyStore = surveyName.map(e => { 
            return ` 
             <div class="text-center mt-5">
-            <div>${e.title}</div>
+            <h3>${e.title}</h3>
             <button>${e.submitButtonText}</button>
             </div>
         `
@@ -21,14 +23,14 @@ function renderSurveys(surveyName) {
             <div>${e.label}</div> 
             `
         })
-        console.log(surveyText)
-        surveyTotal = surveyText;
-        surveyTotal = surveyStore;
+        surveyStore[i] += surveyText.join("");
+        surveyTotal = surveyStore.join('');
+        
     }
 
 
   
-    return surveyTotal.join("");
+    return surveyTotal;
 
 
 }
